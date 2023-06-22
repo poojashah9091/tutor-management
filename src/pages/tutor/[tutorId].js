@@ -1,6 +1,6 @@
 import styles from "../../styles/tutorDetails.module.scss";
 import { Paper } from "@mui/material";
-import ProfessionalDetails from "@/components/tutorDetails/professionalDetails";
+import ProfessionalDetails from "@/components/tutorDetails/ProfessionalDetails";
 import PersonalDetails from "@/components/tutorDetails/PersonalDetails";
 import ManagerDetails from "@/components/tutorDetails/ManagerDetails";
 
