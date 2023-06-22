@@ -9,6 +9,7 @@ const TutorListing = ({tutors}) =>{
 
   const columns = [
     {
+      field: ' ',
       renderCell: (params) => {
         return <Avatar alt="avatarImage" src={params.row?.personal?.image} />
       },
@@ -25,7 +26,7 @@ const TutorListing = ({tutors}) =>{
         </strong>
       ),
       width: 200,
-      headerClassName: 'super-app-theme--header'
+      headerClassName: 'custom-header-theme'
     },
     { 
       field: 'email', 
@@ -38,7 +39,7 @@ const TutorListing = ({tutors}) =>{
         </strong>
       ),
       width: 250,
-      headerClassName: 'super-app-theme--header' 
+      headerClassName: 'custom-header-theme' 
     },
     { 
       field: 'subjects', 
@@ -51,7 +52,7 @@ const TutorListing = ({tutors}) =>{
         </strong>
       ),
       width: 220,
-      headerClassName: 'super-app-theme--header' 
+      headerClassName: 'custom-header-theme' 
     },
     { 
       field: 'trainingStatus', 
@@ -64,7 +65,7 @@ const TutorListing = ({tutors}) =>{
         </strong>
       ),
       width: 150,
-      headerClassName: 'super-app-theme--header' 
+      headerClassName: 'custom-header-theme' 
     },
     { 
       field: 'managerEmail', 
@@ -77,7 +78,7 @@ const TutorListing = ({tutors}) =>{
         </strong>
       ),
       width: 250,
-      headerClassName: 'super-app-theme--header',
+      headerClassName: 'custom-header-theme',
     },
     {
       field: 'location',
@@ -90,7 +91,7 @@ const TutorListing = ({tutors}) =>{
         </strong>
       ),
       width: 150,
-      headerClassName: 'super-app-theme--header'
+      headerClassName: 'custom-header-theme'
     }
   ]
 
@@ -106,10 +107,11 @@ const TutorListing = ({tutors}) =>{
         pageSize={10}
         onRowClick={handleRowClick}
         sx={{
-          '& .super-app-theme--header': {
+          '& .custom-header-theme': {
             color: '#ff5630'
           },
         }}
+        // getRowId={(row) => row.id}
       />
     </main>
   )
