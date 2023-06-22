@@ -1,0 +1,48 @@
+.tutor_details_container{
+    display: flex;  
+    flex-flow: row wrap;
+    height: 100vh;
+    gap: 10px;
+    margin: 10px;
+}
+@media all and (min-width: 800px) {
+    .tutor_details_section{ 
+        flex: 2 0px; 
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        & div{
+            min-height: calc(50% - 40px);
+        }
+    }
+    .manager_details_section{
+        flex: 1 0px; 
+        & div{
+            height: 100%;
+        }
+    }
+}
+@media all and (max-width: 800px) {
+    .tutor_details_container{
+        height: unset;
+    }
+    .tutor_details_section{ 
+        width: 100%;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        & div{
+            height: 70%;
+            height: fit-content;
+        }
+    }
+    .manager_details_section{
+        width: 100%;
+        height: fit-content;
+        & div{
+            height: 30%;
+        }
+    }
+}

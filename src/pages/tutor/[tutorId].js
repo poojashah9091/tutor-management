@@ -1,0 +1,40 @@
+import styles from "../../styles/tutorDetails.module.scss";
+import { Paper } from "@mui/material";
+import ProfessionalDetails from "@/components/tutorDetails/professionalDetails";
+import PersonalDetails from "@/components/tutorDetails/PersonalDetails";
+import ManagerDetails from "@/components/tutorDetails/ManagerDetails";
+
+const tutorDetails = ({tutorData}) =>{
+    return(
+        <main className={styles.tutor_details_container}>
+            <article className={styles.tutor_details_section}>
+                <Paper elevation={3}>
+                <PersonalDetails data={tutorData.personal} empId={tutorData.professional.empId}/>
+                </Paper>
+                <Paper elevation={3}>
+                    <ProfessionalDetails data={tutorData.professional} />
+                
+                </Paper>
+            </article>
+            <article className={styles.manager_details_section}>
+                <Paper elevation={3}>
+                    <ManagerDetails data={tutorData.professional.managerDetails} />
+                </Paper>
+            </article>
+        </main>
+    )
+}
+
+export default tutorDetails;
+
+export const getServerSideProps = async({params}) =>{
+    const {tutorId} = params;
+    const response = await fetch(`http://localhost:4000/tutors/${tutorId}`);
+    const data = await response.json();
+
+    return{
+        props: {
+            tutorData: data
+        }
+    }
+}
