@@ -29,7 +29,7 @@ export default tutorDetails;
 
 export const getServerSideProps = async({params}) =>{
     const {tutorId} = params;
-    const response = await fetch(`http://localhost:4000/tutors/${tutorId}`);
+    const response = await fetch(`https://json-server-mock-api-tutors.vercel.app/tutors/${tutorId}`);
     const data = await response.json();
 
     return{

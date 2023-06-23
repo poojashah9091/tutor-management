@@ -119,7 +119,7 @@ const TutorListing = ({tutors}) =>{
 export default TutorListing;
 
 export const getServerSideProps = async() =>{
-  const response = await fetch("http://localhost:4000/tutors");
+  const response = await fetch("https://json-server-mock-api-tutors.vercel.app/tutors");
   const data = await response.json();
 
   return{
