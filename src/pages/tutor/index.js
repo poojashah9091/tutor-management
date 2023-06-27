@@ -112,7 +112,6 @@ const TutorListing = ({tutors}) =>{
         pageSize={10}
         onRowClick={handleRowClick}
         slots={{ toolbar: GridToolbarQuickFilter }}
-        pageSizeOptions={[5, 10, 25]}
         sx={{
           '& .custom-header-theme': {
             color: '#ff5630'
