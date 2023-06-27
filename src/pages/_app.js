@@ -15,8 +15,8 @@ const MyApp = ({ Component, pageProps, emotionCache = clientSideEmotionCache }) 
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Head>
-          <title>Codevolution</title>
-          <meta name='description' content='Awesome YouTube channel' />
+          <title>Team Up</title>
+          <meta name='description' content='Mock application for tutor management' />
         </Head>
         <Header />
         <Component {...pageProps} />
