@@ -2,4 +2,6 @@
     display: flex;
     padding: 5px;
     background-color: black;
+    align-items: center;
+    height: 60px;
   }
