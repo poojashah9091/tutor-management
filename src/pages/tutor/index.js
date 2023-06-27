@@ -1,4 +1,4 @@
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridToolbarQuickFilter } from '@mui/x-data-grid';
 import { Avatar } from '@mui/material';
 import { useRouter } from 'next/router';
 import styles from '../../styles/tutorListing.module.scss';
@@ -13,7 +13,9 @@ const TutorListing = ({tutors}) =>{
       renderCell: (params) => {
         return <Avatar alt="avatarImage" src={params.row?.personal?.image} />
       },
-      width: 70
+      width: 70,
+      sortable: false,
+      disableColumnMenu: true
     },
     {
       field: 'tutorName',
@@ -103,15 +105,19 @@ const TutorListing = ({tutors}) =>{
     <main className={styles.tutorList_container}>
       <DataGrid
         rows={tutors} 
+        disableColumnFilter
+        disableColumnSelector
+        disableDensitySelector
         columns={columns}
         pageSize={10}
         onRowClick={handleRowClick}
+        slots={{ toolbar: GridToolbarQuickFilter }}
+        pageSizeOptions={[5, 10, 25]}
         sx={{
           '& .custom-header-theme': {
             color: '#ff5630'
           },
         }}
-        // getRowId={(row) => row.id}
       />
     </main>
   )
