@@ -8,16 +8,15 @@ const tutorDetails = ({tutorData}) =>{
     return(
         <main className={styles.tutor_details_container}>
             <article className={styles.tutor_details_section}>
-                <Paper elevation={3} sx={{overflow: 'auto'}}>
-                <PersonalDetails data={tutorData.personal} empId={tutorData.professional.empId}/>
+                <Paper elevation={3}>
+                    <PersonalDetails data={tutorData.personal} empId={tutorData.professional.empId}/>
                 </Paper>
-                <Paper elevation={3} sx={{overflow: 'auto'}}>
+                <Paper elevation={3}>
                     <ProfessionalDetails data={tutorData.professional} />
-                
                 </Paper>
             </article>
             <article className={styles.manager_details_section}>
-                <Paper elevation={3} sx={{overflow: 'auto'}}>
+                <Paper elevation={3} sx={{height: '100%'}}>
                     <ManagerDetails data={tutorData.professional.managerDetails} />
                 </Paper>
             </article>

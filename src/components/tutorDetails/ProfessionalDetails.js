@@ -19,7 +19,7 @@ const ProfessionalDetails = ({data}) =>{
 
 
     return(
-        <main className={styles.professional_details_container}>
+        <>
             <p className={styles.section_header}>Additional Details</p>
             {
                 formattedData.map(entry=>{
@@ -31,7 +31,7 @@ const ProfessionalDetails = ({data}) =>{
                     )
                 })
             }
-        </main>
+        </>
     )
 }
 

@@ -14,7 +14,7 @@ const ManagerDetails = ({data}) =>{
         }
     ]
     return(
-        <main className={styles.manager_details_container}>
+        <>
             <p className={styles.section_header}>Manager Details</p>
             <section className={styles.basic_info}>
                 <Avatar alt="avatarImage" src={data?.image} sx={{ width: 94, height: 94, border: '1px solid #d2d2d2' }}/>
@@ -33,7 +33,7 @@ const ManagerDetails = ({data}) =>{
                     )
                 })
             }
-        </main>
+        </>
     )
 }
 

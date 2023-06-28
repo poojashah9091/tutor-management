@@ -31,7 +31,7 @@ const PersonalDetails = ({data, empId}) =>{
     ]
 
     return(
-        <main className={styles.personal_details_container}>
+        <>
             <p className={styles.section_header}>Basic Details</p>
             <section className={styles.basic_info}>
                 <Avatar alt="avatarImage" src={data?.image} sx={{ width: 94, height: 94, border: '1px solid #d2d2d2' }}/>
@@ -50,7 +50,7 @@ const PersonalDetails = ({data, empId}) =>{
                     )
                 })
             }
-        </main>
+        </>
     )
 }
 

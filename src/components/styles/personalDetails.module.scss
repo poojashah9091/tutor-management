@@ -1,33 +1,37 @@
-.personal_details_container{
+.section_header {
+    margin: unset;
     padding: 10px;
-    .section_header{
-        margin: unset;
-        padding: 10px;
-        color: #ff5630;
-        font-weight: 600;
-    }
+    color: #ff5630;
+    font-weight: 600;
 }
-.basic_info{
+
+.basic_info {
     display: flex;
     align-items: center;
     margin-bottom: 25px;
-    & div{
+
+    & div {
         margin-left: 10px;
-        & h1,h5{
-            margin:unset;
+
+        & h1,
+        h5 {
+            margin: unset;
         }
     }
 }
-.item_group{
+
+.item_group {
     margin: 10px;
     display: flex;
     font-size: 14px;
-    .item_label{
+
+    .item_label {
         margin: unset;
         margin-right: 10px;
         font-weight: 600;
     }
-    .item_value{
+
+    .item_value {
         margin: unset;
     }
 }
