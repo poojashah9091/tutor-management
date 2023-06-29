@@ -1,0 +1,11 @@
+$primary: #ff5630;
+$white: #fff;
+$black: #000;
+$light-gray: #d2d2d2;
+
+:export {
+    primary: $primary;
+    white: $white;
+    black: $black;
+    lightGray: $light-gray;
+}
