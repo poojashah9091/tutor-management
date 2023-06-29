@@ -6,8 +6,7 @@
     "dev": "next dev -p 5002",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "serve-json": "json-server --watch src/data/db.json --port 4000"
+    "lint": "next lint"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
