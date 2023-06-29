@@ -1,5 +1,6 @@
 import styles from "../styles/managerDetails.module.scss";
 import { Avatar } from "@mui/material";
+import colors from "../../utils/colors.module.scss";
 
 const ManagerDetails = ({data}) =>{
     
@@ -17,7 +18,7 @@ const ManagerDetails = ({data}) =>{
         <>
             <p className={styles.section_header}>Manager Details</p>
             <section className={styles.basic_info}>
-                <Avatar alt="avatarImage" src={data?.image} sx={{ width: 94, height: 94, border: '1px solid #d2d2d2' }}/>
+                <Avatar alt="avatarImage" src={data?.image} sx={{ width: 94, height: 94, border: `1px solid ${colors.lightGray}` }}/>
                 <div>
                     <h1>{data?.empId || '-'}</h1>
                     <h5>{data?.name || '-'}</h5>

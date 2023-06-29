@@ -2,6 +2,7 @@ import { DataGrid, GridToolbarQuickFilter } from '@mui/x-data-grid';
 import { Avatar } from '@mui/material';
 import { useRouter } from 'next/router';
 import styles from '../../styles/tutorListing.module.scss';
+import colors from '../../utils/colors.module.scss';
 
 const TutorListing = ({tutors}) =>{
 
@@ -109,12 +110,12 @@ const TutorListing = ({tutors}) =>{
         disableColumnSelector
         disableDensitySelector
         columns={columns}
-        pageSize={10}
+        autoPageSize
         onRowClick={handleRowClick}
         slots={{ toolbar: GridToolbarQuickFilter }}
         sx={{
           '& .custom-header-theme': {
-            color: '#ff5630'
+            color: colors.primary
           },
         }}
       />

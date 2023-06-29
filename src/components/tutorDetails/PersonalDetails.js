@@ -1,5 +1,6 @@
 import { Avatar } from "@mui/material";
 import styles from "../styles/personalDetails.module.scss";
+import colors from "../../utils/colors.module.scss";
 
 const PersonalDetails = ({data, empId}) =>{
 
@@ -34,7 +35,7 @@ const PersonalDetails = ({data, empId}) =>{
         <>
             <p className={styles.section_header}>Basic Details</p>
             <section className={styles.basic_info}>
-                <Avatar alt="avatarImage" src={data?.image} sx={{ width: 94, height: 94, border: '1px solid #d2d2d2' }}/>
+                <Avatar alt="avatarImage" src={data?.image} sx={{ width: 94, height: 94, border: `1px solid ${colors.lightGray}` }}/>
                 <div>
                     <h1>{empId}</h1>
                     <h5>{data?.firstName} {data?.lastName}</h5>

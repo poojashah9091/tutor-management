@@ -1,7 +1,9 @@
+@import "../../utils/colors.module.scss";
+
 .section_header {
     margin: unset;
     padding: 10px;
-    color: #ff5630;
+    color: $primary;
     font-weight: 600;
 }
 
