@@ -1,7 +1,8 @@
 .header {
-    display: flex;
-    padding: 5px;
-    background-color: black;
-    align-items: center;
-    height: 60px;
-  }
+  display: flex;
+  padding: 5px 15px;
+  background-color: black;
+  align-items: center;
+  height: 60px;
+  justify-content: space-between;
+}
