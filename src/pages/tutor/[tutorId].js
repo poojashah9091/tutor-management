@@ -4,19 +4,20 @@ import ProfessionalDetails from "@/components/tutorDetails/ProfessionalDetails";
 import PersonalDetails from "@/components/tutorDetails/PersonalDetails";
 import ManagerDetails from "@/components/tutorDetails/ManagerDetails";
 
-const tutorDetails = ({tutorData}) =>{ 
-    return(
+const tutorDetails = ({ tutorData }) => {
+
+    return (
         <main className={styles.tutor_details_container}>
             <article className={styles.tutor_details_section}>
                 <Paper elevation={3}>
-                    <PersonalDetails data={tutorData.personal} empId={tutorData.professional.empId}/>
+                    <PersonalDetails data={tutorData.personal} empId={tutorData.professional.empId} />
                 </Paper>
                 <Paper elevation={3}>
                     <ProfessionalDetails data={tutorData.professional} />
                 </Paper>
             </article>
             <article className={styles.manager_details_section}>
-                <Paper elevation={3} sx={{height: '100%'}}>
+                <Paper elevation={3} sx={{ height: '100%' }}>
                     <ManagerDetails data={tutorData.professional.managerDetails} />
                 </Paper>
             </article>
@@ -26,12 +27,12 @@ const tutorDetails = ({tutorData}) =>{
 
 export default tutorDetails;
 
-export const getServerSideProps = async({params}) =>{
-    const {tutorId} = params;
-    const response = await fetch(`https://json-server-mock-api-tutors.vercel.app/tutors/${tutorId}`);
+export const getServerSideProps = async ({ params }) => {
+    const { tutorId } = params;
+    const response = await fetch(`https://json-server-mock-api-tutors-poojashah9091.vercel.app/tutors/${tutorId}`);
     const data = await response.json();
 
-    return{
+    return {
         props: {
             tutorData: data
         }

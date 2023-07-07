@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import styles from '../../styles/tutorListing.module.scss';
 import colors from '../../utils/colors.module.scss';
 
-const TutorListing = ({tutors}) =>{
+const TutorListing = ({ tutors }) => {
 
   const router = useRouter();
 
@@ -31,8 +31,8 @@ const TutorListing = ({tutors}) =>{
       width: 200,
       headerClassName: 'custom-header-theme'
     },
-    { 
-      field: 'email', 
+    {
+      field: 'email',
       valueGetter: (params) => {
         return `${params.row?.professional?.email || '-'}`;
       },
@@ -42,10 +42,10 @@ const TutorListing = ({tutors}) =>{
         </strong>
       ),
       width: 250,
-      headerClassName: 'custom-header-theme' 
+      headerClassName: 'custom-header-theme'
     },
-    { 
-      field: 'subjects', 
+    {
+      field: 'subjects',
       valueGetter: (params) => {
         return `${params.row?.professional?.subjects.join(', ') || '-'}`;
       },
@@ -55,10 +55,10 @@ const TutorListing = ({tutors}) =>{
         </strong>
       ),
       width: 220,
-      headerClassName: 'custom-header-theme' 
+      headerClassName: 'custom-header-theme'
     },
-    { 
-      field: 'trainingStatus', 
+    {
+      field: 'trainingStatus',
       valueGetter: (params) => {
         return `${params.row?.professional?.trainingStatus || '-'}`;
       },
@@ -68,10 +68,10 @@ const TutorListing = ({tutors}) =>{
         </strong>
       ),
       width: 150,
-      headerClassName: 'custom-header-theme' 
+      headerClassName: 'custom-header-theme'
     },
-    { 
-      field: 'managerEmail', 
+    {
+      field: 'managerEmail',
       valueGetter: (params) => {
         return `${params.row?.professional?.managerDetails?.email || '-'}`;
       },
@@ -98,38 +98,42 @@ const TutorListing = ({tutors}) =>{
     }
   ]
 
-  const handleRowClick = (e) =>{
+  const handleRowClick = (e) => {
     router.push(`/tutor/${e.id}`);
   }
 
   return (
     <main className={styles.tutorList_container}>
-      <DataGrid
-        rows={tutors} 
-        disableColumnFilter
-        disableColumnSelector
-        disableDensitySelector
-        columns={columns}
-        autoPageSize
-        onRowClick={handleRowClick}
-        slots={{ toolbar: GridToolbarQuickFilter }}
-        sx={{
-          '& .custom-header-theme': {
-            color: colors.primary
-          },
-        }}
-      />
+      {
+        tutors?.length > 0 &&
+
+        <DataGrid
+          rows={tutors}
+          disableColumnFilter
+          disableColumnSelector
+          disableDensitySelector
+          columns={columns}
+          autoPageSize
+          onRowClick={handleRowClick}
+          slots={{ toolbar: GridToolbarQuickFilter }}
+          sx={{
+            '& .custom-header-theme': {
+              color: colors.primary
+            },
+          }}
+        />
+      }
     </main>
   )
 }
 export default TutorListing;
 
-export const getServerSideProps = async() =>{
-  const response = await fetch("https://json-server-mock-api-tutors.vercel.app/tutors");
+export const getServerSideProps = async () => {
+  const response = await fetch("https://json-server-mock-api-tutors-poojashah9091.vercel.app/tutors");
   const data = await response.json();
 
-  return{
-    props:{
+  return {
+    props: {
       tutors: data
     }
   }
