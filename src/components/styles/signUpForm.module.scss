@@ -1,0 +1,11 @@
+@import "../../utils/colors.module.scss";
+
+.item {
+    margin: 10px 0px;
+
+    .item_label {
+        font-weight: bold;
+        font-size: 13px;
+        margin-right: 10px;
+    }
+}
