@@ -8,7 +8,7 @@ export default function SignUp() {
   return (
     <main className={styles.container}>
       <Image src={logo} alt="Logo" width={250} />
-      <Paper elevation={3} sx={{ padding: '20px', width: '30vw' }}>
+      <Paper elevation={3} sx={{ padding: '20px', width: {xs:'80vw', sm:'50vw', md:'30vw'}}}>
         <SignInForm />
       </Paper>
     </main>
